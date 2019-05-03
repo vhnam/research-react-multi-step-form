@@ -9,7 +9,13 @@ import styles from './Registration.module.css';
 
 const Registration = () => {
   const [step, setStep] = useState(1);
-  const [fieldValues, setFieldValues] = useState();
+  const [fieldValues, setFieldValues] = useState({
+    name: null,
+    email: null,
+    password: null,
+    age: null,
+    instruments: [],
+  });
 
   const nextStep = () => {
     setStep(step + 1);
@@ -20,11 +26,11 @@ const Registration = () => {
   };
 
   const confirm = () => {
-    alert('confirm');
+    nextStep();
   };
 
-  const save = () => {
-    alert('save');
+  const save = (data) => {
+    setFieldValues(Object.assign(fieldValues, data));
   };
 
   const showStep = () => {
