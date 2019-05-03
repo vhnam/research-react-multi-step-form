@@ -26,7 +26,7 @@ const Registration = () => {
   };
 
   const confirm = () => {
-    alert('confirm');
+    nextStep();
   };
 
   const save = (data) => {

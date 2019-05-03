@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SuccessForm = () => {
+const SuccessForm = ({fieldValues}) => {
   return (
     <div>
       <h2>Successfully Registered!</h2>

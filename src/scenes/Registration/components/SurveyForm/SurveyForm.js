@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
 import getRadioOrCheckboxValue from '../../../../helpers/getRadioOrCheckboxValue';
+import generateCypressAttribute from '../../../../helpers/generateAutomationID';
 
 const SurveyForm = ({fieldValues, nextStep, previousStep, save}) => {
   const ages = ['18-26', '27-38', '39-50', '51-62'];
@@ -71,7 +72,11 @@ const SurveyForm = ({fieldValues, nextStep, previousStep, save}) => {
             >
               Back
             </button>
-            <button type="submit" className="btn btn-primary pull-right">
+            <button
+              type="submit"
+              className="btn btn-primary pull-right"
+              {...generateCypressAttribute('btn-save')}
+            >
               Save &amp; Continue
             </button>
           </li>

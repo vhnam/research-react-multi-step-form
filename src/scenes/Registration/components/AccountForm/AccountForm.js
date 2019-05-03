@@ -1,6 +1,8 @@
 import React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 
+import generateCypressAttribute from '../../../../helpers/generateAutomationID';
+
 const AccountForm = ({fieldValues, nextStep, save}) => {
   const name = useRef(null);
   const password = useRef(null);
@@ -26,7 +28,12 @@ const AccountForm = ({fieldValues, nextStep, save}) => {
         <ul className="form-fields">
           <li>
             <label>Name</label>
-            <input type="text" ref={name} defaultValue={fieldValues.name} />
+            <input
+              type="text"
+              ref={name}
+              defaultValue={fieldValues.name}
+              {...generateCypressAttribute('name')}
+            />
           </li>
           <li>
             <label>Password</label>
@@ -34,17 +41,24 @@ const AccountForm = ({fieldValues, nextStep, save}) => {
               type="password"
               ref={password}
               defaultValue={fieldValues.password}
+              {...generateCypressAttribute('password')}
             />
           </li>
           <li>
             <label>Email</label>
-            <input type="email" ref={email} defaultValue={fieldValues.email} />
+            <input
+              type="email"
+              ref={email}
+              defaultValue={fieldValues.email}
+              {...generateCypressAttribute('email')}
+            />
           </li>
           <li className="form-footer">
             <button
               type="submit"
               className="btn btn-primary pull-right"
               onClick={onSubmit}
+              {...generateCypressAttribute('btn-save')}
             >
               Save &amp; Continue
             </button>
