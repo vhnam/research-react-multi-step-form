@@ -30,8 +30,7 @@ const Registration = () => {
   };
 
   const save = (data) => {
-    console.log(data);
-    console.log(Object.assign(fieldValues, data));
+    setFieldValues(Object.assign(fieldValues, data));
   };
 
   const showStep = () => {

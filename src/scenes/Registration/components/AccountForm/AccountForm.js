@@ -22,29 +22,35 @@ const AccountForm = ({fieldValues, nextStep, save}) => {
   return (
     <div>
       <h2>Account Details</h2>
-      <ul className="form-fields">
-        <li>
-          <label>Name</label>
-          <input type="text" ref={name} defaultValue={fieldValues.name} />
-        </li>
-        <li>
-          <label>Password</label>
-          <input
-            type="password"
-            ref={password}
-            defaultValue={fieldValues.password}
-          />
-        </li>
-        <li>
-          <label>Email</label>
-          <input type="email" ref={email} defaultValue={fieldValues.email} />
-        </li>
-        <li className="form-footer">
-          <button className="btn btn-primary pull-right" onClick={onSubmit}>
-            Save &amp; Continue
-          </button>
-        </li>
-      </ul>
+      <form onSubmit={onSubmit} noValidate={true}>
+        <ul className="form-fields">
+          <li>
+            <label>Name</label>
+            <input type="text" ref={name} defaultValue={fieldValues.name} />
+          </li>
+          <li>
+            <label>Password</label>
+            <input
+              type="password"
+              ref={password}
+              defaultValue={fieldValues.password}
+            />
+          </li>
+          <li>
+            <label>Email</label>
+            <input type="email" ref={email} defaultValue={fieldValues.email} />
+          </li>
+          <li className="form-footer">
+            <button
+              type="submit"
+              className="btn btn-primary pull-right"
+              onClick={onSubmit}
+            >
+              Save &amp; Continue
+            </button>
+          </li>
+        </ul>
+      </form>
     </div>
   );
 };
